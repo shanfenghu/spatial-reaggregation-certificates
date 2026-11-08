@@ -10,13 +10,14 @@ import platform
 import re
 import resource
 import time
+import warnings
 
 import numpy as np
 import pandas as pd
 import pyproj
 from pyproj import Geod, Transformer
 import scipy
-from scipy.optimize import linprog
+from scipy.optimize import linprog, OptimizeWarning
 from scipy.sparse import coo_matrix, vstack
 from scipy.spatial.distance import cdist
 
@@ -26,6 +27,19 @@ OUT = ROOT / "run/primary"
 FOSSIL = {"COAL", "GAS", "OIL", "OFSL"}
 GEOD = Geod(ellps="WGS84")
 PROJECT = Transformer.from_crs(4326, 5070, always_xy=True)
+
+
+def _solve_lp(*args, **kwargs):
+    """Keep HiGHS' shared process scheduler consistent across entry points.
+
+    A first automatic-thread solve prevents later explicit serial solves in the
+    same process. Use one thread here as in the comparison helpers, regardless
+    of whether those helpers have been imported yet.
+    """
+    options = dict(kwargs.pop("options", {}), threads=1)
+    with warnings.catch_warnings():
+        warnings.filterwarnings("ignore", message="Unrecognized options detected", category=OptimizeWarning)
+        return linprog(*args, options=options, **kwargs)
 
 
 def write_csv(name, rows):
@@ -265,7 +279,7 @@ def score(geo):
     start = time.perf_counter()
     matrix = vstack([geo["row"], geo["col"]], format="csr")
     rhs = np.r_[geo["p"], geo["truth"]]
-    fit = linprog(geo["cost"], A_eq=matrix, b_eq=rhs, bounds=(0, None), method="highs")
+    fit = _solve_lp(geo["cost"], A_eq=matrix, b_eq=rhs, bounds=(0, None), method="highs")
     assert fit.success, fit.message
     residual = float(np.max(np.abs(matrix @ fit.x - rhs)))
     dual_error = abs(float(fit.eqlin.marginals @ rhs - fit.fun))
@@ -303,7 +317,7 @@ def endpoint_lp(geo, query, budget, upper):
     query = checked_query(geo, query, budget)
     start = time.perf_counter()
     objective = query[geo["v"]] * (-1. if upper else 1.)
-    fit = linprog(objective, A_eq=geo["row"], b_eq=geo["p"], A_ub=geo["cost"][None, :] if np.isfinite(budget) else None,
+    fit = _solve_lp(objective, A_eq=geo["row"], b_eq=geo["p"], A_ub=geo["cost"][None, :] if np.isfinite(budget) else None,
                   b_ub=[budget] if np.isfinite(budget) else None, bounds=(0, None), method="highs")
     assert fit.success, fit.message
     residual = max(float(np.max(np.abs(geo["row"] @ fit.x - geo["p"]))),

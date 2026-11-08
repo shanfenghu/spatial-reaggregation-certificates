@@ -35,6 +35,8 @@ The endpoint APIs reject fractional/nonfinite or mis-sized query indicators
 before conversion and check each LP coupling for finite/nonnegative flow,
 row conservation, cost and objective agreement. Zero and infinite budgets are
 supported. Numerical witness checks supplement rather than prove optimality.
+Standalone and comparison LP entry points consistently use one HiGHS thread;
+importing comparison helpers after a standalone solve remains supported.
 
 `study/precision.py` bounds the residual uncrossed mass using a feasible
 proportional crossing plan. The comparison bound in `crossing_bounds.py` uses

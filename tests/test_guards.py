@@ -1,5 +1,9 @@
 """Regression tests for fractional indicators and invalid endpoint witnesses."""
 import unittest
+import os
+from pathlib import Path
+import subprocess
+import sys
 import numpy as np
 import pandas as pd
 from engine import geometry, endpoint_scan, endpoint_lp
@@ -34,6 +38,32 @@ class GuardTests(unittest.TestCase):
                            (valid,.4),(np.array([0.,.5,.5,0.]),.5)]:
             with self.subTest(flow=flow,value=value),self.assertRaises(ValueError):
                 check_witness(self.geo,[1,0],0.,flow,value)
+
+    def test_standalone_solves_remain_valid_after_comparison_import(self):
+        # A child process gives each first solve a genuinely fresh HiGHS scheduler.
+        root = Path(__file__).resolve().parents[1]
+        env = dict(os.environ, PYTHONPATH=str(root/'study'), PYTHONDONTWRITEBYTECODE='1')
+        for name in ['OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'VECLIB_MAXIMUM_THREADS']:
+            env.pop(name, None)
+        script = '''
+import sys
+import pandas as pd
+import engine
+frame = pd.DataFrame(dict(source=['a','a'], x=[0.,1.], y=[0.,0.],
+                          truth=[1.,1.], weight=[1.,1.]))
+geo = engine.geometry(frame)
+if sys.argv[1] == 'score':
+    assert abs(engine.score(geo)[0]) < 1e-10
+assert abs(engine.endpoint_lp(geo, [1,0], .1, True)[0] - 1.2) < 1e-10
+import compare
+assert abs(engine.endpoint_lp(geo, [1,0], .1, True)[0] - 1.2) < 1e-10
+assert abs(engine.score(geo)[0]) < 1e-10
+'''
+        for first in ['endpoint', 'score']:
+            with self.subTest(first=first):
+                result = subprocess.run([sys.executable, '-c', script, first], cwd=root,
+                                        env=env, capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stdout+result.stderr)
 
 
 if __name__=='__main__':unittest.main()
