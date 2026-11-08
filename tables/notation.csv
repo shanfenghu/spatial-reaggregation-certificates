@@ -1,0 +1,9 @@
+symbol,meaning
+"S_a, b_a",Candidate group and known total of source a
+"M, n",Positive map total and number of candidate locations
+"p, y, x in R_+^n","Predicted, reference and feasible alternative mass fractions"
+"d_ij, D",Projected distance and largest within-source distance
+"T, C(p,x), tau","Coupling, normalised cost and calibrated cost budget"
+"q in {0,1}^n, Q",One point-membership query and registered catalogue
+"L_q, U_q",Coarse-only bounds in mass-fraction units
+"m, k",Calibration-map count and conformal order-statistic index

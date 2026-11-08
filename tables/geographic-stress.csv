@@ -1,0 +1,13 @@
+domain,method,allocation_maps_covered,catalogues_covered,mean_normalised_width,mean_interval_score
+census,Transport (ours),6/8,8/8,0.9364,0.9364
+census,Reconciled box,7/8,8/8,0.6447,0.6447
+census,Reconciled ellipsoid,7/8,8/8,0.7724,0.7724
+census,Aggregate global,--,8/8,0.4403,0.4403
+census,Aggregate spatial,--,8/8,0.4703,0.4703
+census,Label-free transport,5/8,8/8,0.9361,0.9361
+egrid,Transport (ours),82/87,83/87,0.8237,0.9954
+egrid,Reconciled box,80/87,85/87,0.9499,0.9599
+egrid,Reconciled ellipsoid,82/87,84/87,0.9621,0.9684
+egrid,Aggregate global,--,84/87,0.8581,0.9121
+egrid,Aggregate spatial,--,82/87,0.8730,0.9369
+egrid,Label-free transport,82/87,83/87,0.8237,0.9954

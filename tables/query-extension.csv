@@ -1,0 +1,13 @@
+domain,method,added_catalogues_covered,union_catalogues_covered,added_mean_normalised_width,added_mean_interval_score
+census,Transport (ours),5/5,21/21,0.9722,0.9722
+census,Reconciled box,5/5,21/21,0.7488,0.7488
+census,Reconciled ellipsoid,5/5,21/21,0.7573,0.7573
+census,Aggregate global (fixed/expanded),4/5,17/21,0.3887,0.5334
+census,Aggregate spatial (fixed/expanded),4/5,17/21,0.3597,0.5810
+census,Coarse-only,5/5,21/21,1.0000,1.0000
+egrid,Transport (ours),122/124,252/269,0.8933,0.9101
+egrid,Reconciled box,111/124,252/269,0.8651,0.9017
+egrid,Reconciled ellipsoid,112/124,254/269,0.8787,0.9238
+egrid,Aggregate global (fixed/expanded),113/124,238/269,0.8245,0.8767
+egrid,Aggregate spatial (fixed/expanded),113/124,235/269,0.8268,0.8836
+egrid,Coarse-only,124/124,269/269,1.0000,1.0000

@@ -41,6 +41,30 @@ in [docs/method.md](docs/method.md); exhaustive outcomes are regenerated locally
 The tests include independent LP oracles, free/absent crossings, proportional-plan
 bounds, rank/conic/box controls, matched-map weighting and acquisition failures.
 
+## Selected scientific outputs
+
+The actual selected figures, readable tables and key numerical summaries are
+included. Provider-input exclusions do not exclude these original findings.
+
+- Allocation/query illustration: [PDF](figures/allocation-query-precision.pdf), [PNG](figures/allocation-query-precision.png).
+- Width and miss-penalised score comparison: [PDF](figures/interval-comparison.pdf), [PNG](figures/interval-comparison.png).
+- Budget compatibility and precision regimes: [PDF](figures/precision-regimes.pdf), [PNG](figures/precision-regimes.png).
+- [Eight selected table CSVs and their generation routes](tables/README.md).
+- [Full-precision scientific summaries and recorded costs](reference/), including
+  primary/geographic comparisons, registered regimes, repartitions, crossing and
+  precision certificates, changed radii and matched-map composition.
+
+The root reproduction renders the three figures through `study/figures.py` from
+the reproduced results. To format the selected computed tables afterwards:
+
+```sh
+PYTHONPATH=study .venv/bin/python study/tables.py
+```
+
+This writes `run/tables/`. The included files preserve the selected recorded
+displays; numerical relationships and plotted geometry define correspondence,
+while timing observations and graphics metadata can vary by environment.
+
 The Census task concerns released counts assigned to internal points; the energy
 task concerns a numerical-reporting inventory cohort. Neither represents exact
 resident locations, a complete physical inventory or physical exposure. Rank

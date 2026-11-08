@@ -1,0 +1,5 @@
+construction_and_calibrated_object,constraints_and_query_scope,precision_and_query_computation
+Transport (ours) / entire allocation,Shared budget for within-source moves; same-map queries by projection,Exact saturation test; narrowing certificates may be inconclusive. Exact endpoints: O(E+n log n) extraction and scan.
+Reconciled box / entire allocation,Coordinate limits; same-map queries by projection,Width follows calibrated coordinate limits. Exact binary endpoints by source sums.
+Reconciled ellipsoid / entire allocation,Coupled coordinate deviations; same-map queries by projection,Width depends on covariance shape and calibrated radius. Binary endpoints by convex optimisation.
+Aggregate global/spatial / registered answer vector,"Joint intervals for a fixed catalogue, clipped to coarse bounds; no joint allocation set",Calibrated residual maxima set widths. No endpoint transport solve or automatic new-query guarantee.

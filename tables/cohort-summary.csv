@@ -1,0 +1,7 @@
+quantity,census,energy
+fine_reference_records,25649,3205
+source_and_map,block group / tract,county / patch
+eligible_maps,60,369
+primary_training_calibration_test,20 / 19 / 21,40 / 60 / 269
+primary_test_queries,36,1158
+southern_test_maps,8,87
