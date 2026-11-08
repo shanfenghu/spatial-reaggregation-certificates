@@ -1,0 +1,29 @@
+{
+  "question": "Is the reported energy width ordering change attributable solely to different map composition, or does an original-versus-added workload change remain on the same maps?",
+  "data": "Fixed changed-radius query/map/catalogue outcomes and original primary summaries; no new outcomes, fits or normalisers.",
+  "matching": "For each domain use all test maps with at least one distinct added crossing mask, as defined by the fixed geometric rules (5Census,124energy); retain every original query on those same maps and all their added queries. No failure/coverage/saturation-based filtering.",
+  "comparisons": {
+    "central": [
+      "transport_scan minus reconciled_box",
+      "transport_scan minus reconciled_ellipse"
+    ],
+    "context": [
+      "transport_scan minus aggregate_global",
+      "transport_scan minus aggregate_spatial"
+    ],
+    "scope": "Original fixed methods; expanded catalogs already exactly coincide with fixed ones. Every comparison uses identical query sets within each map/subset."
+  },
+  "outcomes": {
+    "per_map": "Compute each method mean width_ratio within original queries and within added queries using saved query-specific coarse normalizers; contrast d=transport_width-baseline_width. Positive means transport wider.",
+    "decomposition": "Observed difference between added-subset mean contrast and full-original mean contrast = selection component (matched-original minus full-original) + within-map workload component (matched-added minus matched-original). Exact finite-frame accounting, not causal effects.",
+    "summaries": [
+      "Original-full and matched-original/added method mean widths and contrasts; paired mean change.",
+      "Paired median and25th/75thpercentile change; positive/negative/tie counts for original and added contrasts; sign-switch counts.",
+      "Leave-one-map-out range of original contrast, added contrast and paired mean change; deterministic influence diagnostic."
+    ],
+    "tolerance": "Absolute normalized width contrast<=1e-6 is a numerical tie, matching the original comparative count convention.",
+    "uncertainty": "Counts, paired empirical distribution and influence ranges describe these finite reused frames; no iid/external confidence interval, significance or causal identification. No geometry-only attribution: query mix and per-query coarse widths change together."
+  },
+  "interpretation": "If matched-original and matched-added means retain opposite signs, selection alone cannot account for the reversal. If matched-original already has added ordering, correct the reversal interpretation and identify composition. Retain any mixed/unstable result. Do not search other matches/radii after seeing results.",
+  "consolidation": "Replace/qualify the existing width-reversal interpretation within current results/conclusion, using a short paired comparison and existing table; no new table/figure/raw-result dump. Stop once this competing explanation is resolved at the descriptive level; broader mechanisms or populations remain optional."
+}

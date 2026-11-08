@@ -1,0 +1,43 @@
+{
+  "question": "Does allocation-wide containment retain useful precision when the registered screening workload is expanded, and how do unpromised fixed-catalog reuse and explicitly recalibrated expanded-catalog controls compare?",
+  "population": "Exact original primary calibration and test maps in each domain; no southern run, no new population, no subset chosen by outcomes.",
+  "queries": {
+    "original": "Every frozen3mile distinct crossing mask retained.",
+    "new_radii_miles": [
+      1.5,
+      6.0
+    ],
+    "rationale": "Halve and double the existing screening radius at the same facility centers; a limited scale-change test, not newly claimed regulatory/exposure thresholds.",
+    "centers": "All center IDs that alias any original3mile registered mask on that map; reuse exact retained coordinates.",
+    "construction": "WGS84 geodesic distance<=radius*1609.344. Deduplicate masks within and across all three radii; alias provenance retained.",
+    "selection": "Crossing at least one positive-known-total source, exactly the original eligibility rule; zero-width/identical masks counted as construction controls, not extra weighted queries.",
+    "main_estimand": "Joint coverage of the unique union of original and added masks per original test map; original queries ensure every map remains represented. Width, interval score and useful/saturated fractions average queries within map then maps.",
+    "secondary": "Added-mask-only summaries and separate1.5/6mile summaries; report eligible map counts and do not treat queries as independent."
+  },
+  "methods": {
+    "fixed": [
+      "transport_scan",
+      "reconciled_box",
+      "reconciled_ellipse",
+      "aggregate_global",
+      "aggregate_spatial",
+      "coarse_only"
+    ],
+    "expanded_controls": [
+      "aggregate_global_expanded",
+      "aggregate_spatial_expanded"
+    ],
+    "frozen": "Original primary predictor, training IDs, covariance rho/ell, spatial bandwidth/scale-training rule and calibrated radii. No retuning to test coverage. Reconstruct spatial training scores only for original3mile masks; no new training selection.",
+    "expanded_rule": "Same original calibration maps and nominalalpha.1; rank of max normalized residual over union workload; spatial scale remains original frozen scale. This explicitly changes declared catalog and its calibration residual summaries, not test fitting.",
+    "not_included": "Label-free and point references already establish separate issues; no new label search, predictor search or redundant identical transportLP row.",
+    "information_budget": "Same known margins, coordinates, covariates and original fine calibration vectors for every method. Fixedcatalog reuse has no new-query guarantee. Expanded controls explicitly use expanded-calibration answers; no allocation method is credited with a unique future-query capability."
+  },
+  "metrics": {
+    "coverage": "Originalcatalog,newmask-only and union joint coverage by map; query coverage diagnostic only; wholemap event from frozen recorded scores.",
+    "precision": "Macro width/coarsewidth, alpha.1intervalscore, usefulness<.95 and saturation>=.999999. Preserve poor/adverse results.",
+    "uncertainty": "Numerator/denominator and paired map changes describe this finite frame; no iid/external confidence claim. Geometry-only query additions are prespecified on already inspected maps, not untouched-population confirmation.",
+    "cost": "Shared frame loading/querymaskconstruction/geometry and frozenmodel reconstruction; test per-method constructor and endpoint time separated; expanded calibration score and threshold costs separate; original calibration sunk costs referenced, not silently counted free. Singlehostobservations, no speedup or deployment claim."
+  },
+  "validation": "Original3mile endpoint rows must reproduce archived rows for fixed methods; covered allocation implies unioncatalogcovered. First10addedmasks/domain in sortedmap+mask order checked scan and box againstLP, conic residual/gap checks for all. Independent record arithmetic. New-mask generation geometry-only; no outcome-dependent failures skipped.",
+  "limits": "Exploratory prespecified workload reanalysis on already inspected populations. No test outcome selection, causal attribution, matchedtruecoverage superiority, newdomain count or deployment guarantee."
+}

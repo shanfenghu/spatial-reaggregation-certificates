@@ -1,0 +1,8 @@
+{
+  "frame_loading_projection_seconds": 0.9864200409938348,
+  "registered_catalog_construction_seconds": 0.22655212500831112,
+  "query_masks": 1668,
+  "exact_registered_mask_match": true,
+  "catalog_sha256": "ec970a7f4c1d518124a84013b99de36296d0d7a2bd57f94ee025d591257d1864",
+  "measurement": "Cold deterministic reconstruction after registration, before comparative outcomes; not an original freeze wall-clock measurement."
+}

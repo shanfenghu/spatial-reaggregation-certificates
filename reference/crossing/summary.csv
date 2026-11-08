@@ -1,0 +1,5 @@
+domain,run,queries,maps,exact_saturated_queries,recorded_useful_queries,certified_useful_queries,certified_broad_queries,requires_sort_queries,map_macro_lower_narrowing,map_macro_observed_narrowing,map_macro_upper_narrowing
+census,primary,36,21,27,6,5,28,3,0.02719700494089461,0.031438918575987455,0.19021485313101102
+census,southern_stress,8,8,5,2,2,5,1,0.05028229965643254,0.06363322149614908,0.2505237197050651
+egrid,primary,1158,269,764,373,370,772,16,0.20212655520554448,0.2057934485010348,0.24490881013099491
+egrid,southern_stress,425,87,309,108,108,313,4,0.1753082897785337,0.17633493385600052,0.21997683861676906

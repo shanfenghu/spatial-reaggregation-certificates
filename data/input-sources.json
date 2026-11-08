@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "name": "tl_2020_44_tabblock20.zip",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2020/TABBLOCK20/tl_2020_44_tabblock20.zip",
+      "bytes": 28351631,
+      "sha256": "79d10c9dfec1e3e0962e13d6295b53856db286a156d9937d3737adb0c542f35b",
+      "agency": "U.S. Census Bureau",
+      "version": "2020 Rhode Island tabulation blocks",
+      "attribution": "U.S. Census Bureau, 2020 TIGER/Line tabulation-block shapefiles, Rhode Island.",
+      "distribution_basis": "The exact archive metadata explicitly permits use in products/publications with Census acknowledgement; retain statistical-boundary, accuracy and trademark qualifications.",
+      "terms_url": "https://www2.census.gov/foia/ds_policies/ds027.pdf",
+      "product_url": "https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.2020.html"
+    },
+    {
+      "name": "egrid2023_data_rev2.xlsx",
+      "url": "https://www.epa.gov/system/files/documents/2025-06/egrid2023_data_rev2.xlsx",
+      "bytes": 21213301,
+      "sha256": "895cd81dd8662406189ad8adf5a2578dcb362cdb5cff7cca81b10ee6bd2447c6",
+      "agency": "U.S. Environmental Protection Agency",
+      "version": "eGRID2023 revision 2, released 12 June 2025",
+      "attribution": "U.S. Environmental Protection Agency, eGRID2023, revision 2 (2025), Office of Atmospheric Protection, Clean Air and Power Division.",
+      "distribution_basis": "The eGRID-specific official FAQ Q25 identifies eGRID data as public domain and permits commercial and non-commercial use; the EPA standard open-data licence corroborates that basis.",
+      "terms_url": "https://www.epa.gov/egrid/frequent-questions-about-egrid",
+      "product_url": "https://www.epa.gov/egrid/detailed-data"
+    },
+    {
+      "name": "county_adjacency2023.txt",
+      "url": "https://www2.census.gov/geo/docs/reference/county_adjacency/county_adjacency2023.txt",
+      "bytes": 1116106,
+      "sha256": "df62fedd7d27528af7fd870c7ec92232fb2d6bea3ec6cbc9928946b78e128f64",
+      "agency": "U.S. Census Bureau",
+      "version": "2023 county adjacency",
+      "attribution": "U.S. Census Bureau, 2023 County Adjacency File.",
+      "distribution_basis": "Official Census-produced public reference data; employee-created federal data are generally outside U.S. copyright under the Census public-access policy. No contrary product restriction was found on the official product page.",
+      "terms_url": "https://www2.census.gov/foia/ds_policies/ds027.pdf",
+      "product_url": "https://www.census.gov/geographies/reference-files/time-series/geo/county-adjacency.2023.html"
+    }
+  ],
+  "rule": "Exact acquired versions only. Never substitute newer data or change expected hashes after a mismatch."
+}

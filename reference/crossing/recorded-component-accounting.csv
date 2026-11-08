@@ -1,0 +1,3 @@
+domain,scan_calibration_plus_query_seconds,LP_calibration_plus_query_seconds,calibration_share_of_scan_component,scope
+census,0.1265056679549144,0.5762726679386088,0.9682066261887117,Recorded component accounting only; excludes shared geometry/input/training; not end-to-end speedup.
+egrid,0.0595756521652174,2.0835660270240464,0.5887423263904223,Recorded component accounting only; excludes shared geometry/input/training; not end-to-end speedup.

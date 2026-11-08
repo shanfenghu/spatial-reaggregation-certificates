@@ -1,0 +1,53 @@
+{
+  "domain_runs": [
+    {
+      "domain": "census",
+      "expanded_radii": {
+        "aggregate_global": 0.2176497748544315,
+        "aggregate_spatial": 2.029026578365689
+      },
+      "original_radii": {
+        "transport_scan": 0.15296267794405066,
+        "reconciled_box": 6.116740661396882,
+        "reconciled_ellipse": 9.67254156437364,
+        "aggregate_global": 0.2176497748544315,
+        "aggregate_spatial": 2.029026578365689,
+        "label_free": 0.1523603970961337
+      },
+      "expanded_calibration_score_seconds": {
+        "aggregate_global": 3.99590062443167e-05,
+        "aggregate_spatial": 0.00012358298408798873
+      },
+      "expanded_joint_threshold_seconds": 0.003920499992091209,
+      "shared_query_construction_seconds": 0.022910544939804822,
+      "shared_case_and_reference_preparation_seconds": 0.053488786943489686,
+      "frozen_spatial_reconstruction_seconds": 0.031423250009538606
+    },
+    {
+      "domain": "egrid",
+      "expanded_radii": {
+        "aggregate_global": 0.6624974222062573,
+        "aggregate_spatial": 2.0581282823177656
+      },
+      "original_radii": {
+        "transport_scan": 0.33481841490765135,
+        "reconciled_box": 2.699451044702836,
+        "reconciled_ellipse": 3.7569670657809016,
+        "aggregate_global": 0.6624974222062573,
+        "aggregate_spatial": 2.0581282823177656,
+        "label_free": 0.33481841490765135
+      },
+      "expanded_calibration_score_seconds": {
+        "aggregate_global": 0.00013466700329445302,
+        "aggregate_spatial": 0.0003336670051794499
+      },
+      "expanded_joint_threshold_seconds": 1.1541997082531452e-05,
+      "shared_query_construction_seconds": 0.2194204180559609,
+      "shared_case_and_reference_preparation_seconds": 0.29560736985877156,
+      "frozen_spatial_reconstruction_seconds": 0.03752837498905137
+    }
+  ],
+  "shared_loading_seconds": 1.00448899998446,
+  "elapsed_seconds": 9.01392525000847,
+  "peak_RSS_MiB": 271.40625
+}

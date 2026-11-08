@@ -1,0 +1,19 @@
+{
+  "composition/paired-map-contrasts.csv": "66a541b8fc1a72ad7b9b9c576e8c0b09c507b794a6dd1186f329a6be743b4aa3",
+  "composition/summary.csv": "56304c923c26241f4a696c99eaac7eb98972f245a8600d3af3d29478ac8faa10",
+  "crossing/query-diagnostics.csv": "bbfe332e6225261a04f1cc6343fb7204b0d8cdc595139379f72e1d029ef32cbb",
+  "crossing/summary.csv": "fa0839630cf7b1883466430132d3b564ca8961a8d5ad7bb566d999a60e1ada15",
+  "extension/construction-controls.csv": "eda33843dbb4bb5f6de68d4ff70bad5ca8c7cf22fe965c8c36819fb3885c6520",
+  "extension/expanded-calibration-scores.csv": "01c3024456c8f75df29760fd49bb91f70c57096b08c938ba83810b0b811eb7bf",
+  "extension/map-results.csv": "0502f50753a55a22dd1f6f06381ce9667fe51dad5ec768c2aee6183673ca17e9",
+  "extension/query-catalog.csv": "7a8b34fc67a43bc164c32445397493e08386b0d17f11e12665945b07f2fa4fa5",
+  "extension/query-results.csv": "99cd52b6c12eca42b95ecf2d5739ed8f91de12da4943c9dfc9afb37f5ab6d11c",
+  "extension/study-summary.csv": "3e597151819c3501458857c4a8c6a479b2cb2c4cfb0bf3968f27a7958754b74f",
+  "precision/query-diagnostics.csv": "60c72332a1ab52bd9c1355cda3b4b6f075bfc7aec45c796c026b9b638638289c",
+  "precision/summary.csv": "0d8508d8134699e2ab574cb6a142a603315cfa3f64e0b4dfdf42e015c40e7f7c",
+  "primary/map-results.csv": "c92dbe55cb607df80c699dfc7472ebb44ebb922bbe4e810b507ad0dfd8283c52",
+  "primary/query-results.csv": "ddb03ff49d032e7d1c7ce44dca19c857e8b3c87a8d66a2c5f1e217b4b40a514a",
+  "primary/registered-query-catalog.csv": "ec970a7f4c1d518124a84013b99de36296d0d7a2bd57f94ee025d591257d1864",
+  "primary/score-repartition-sensitivity.csv": "83b57480bc5f0a006fc92a2b2a13e62da4fba5d2600ead7df17d09da1f805fe1",
+  "primary/study-summary.csv": "4628ba0732d29d7b0118c06d6b83819871db877ffc9723b409827fc7fb3b560b"
+}
