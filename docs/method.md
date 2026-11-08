@@ -58,12 +58,12 @@ Run the root reproduction command for these routes, in order:
 - `compare.py` executes both primary and southern comparisons with the same
   predictor/information. `summarize.py` independently recomputes point/reference/
   coarse answers and catalogue metrics. These regenerate `reference/primary/`
-  summaries and the exhaustive non-timing primary hashes.
+  summaries and the exhaustive primary outcomes.
 - `diagnostics.py` computes both certificates for all 1,627 recorded test queries,
   reproducing `reference/crossing/summary.csv` and `reference/precision/summary.csv`.
 - `extension.py` changes radii to 1.5/6 miles at existing centres, with frozen
   original fits and separately declared expanded-catalogue controls. It regenerates
-  `reference/extension/study-summary.csv` and its detailed non-timing output hashes.
+  `reference/extension/study-summary.csv` and its detailed outcomes.
 - `composition.py` separates map selection from paired changes using equal map
   weights and original normalisers; it regenerates `reference/composition/summary.csv`.
 - `figures.py` renders the two-source example, width/score comparison and certificate
@@ -81,10 +81,24 @@ The small `registration-costs.json`, `input-costs.json` and extension
 `cost-components.json` records retain the corresponding original measurements;
 fresh registration and extraction times are recorded separately during a run.
 
-Non-timing exhaustive outputs are compared byte for byte in the pinned environment;
-their expected hashes are in `reference/checksums.json`. Independent arithmetic
+Default reproduction compares seven scientific summary CSVs in `reference/`
+(primary results, registered regimes, score repartitions, precision, crossing,
+changed-radius results and matched-map composition). Floating quantities use
+rtol=1e-7 and atol=1e-9; labels, counts, missingness, schema and ordered rows stay
+exact. This is small relative to reported effects and the four-decimal summary
+precision, while allowing platform arithmetic. For example, a width ratio of
+0.7942 tolerates about 8e-8, far below its difference from 1. No statistical
+resampling tolerance is needed: assignments and seeds remain fixed. Changed
+coverage counts or substantive effects fail rather than being absorbed as noise.
+
+Exact source/input checks bind provenance, the query catalogue binds the fixed
+design, and internal feasibility checks retain their correctness tolerances.
+`reproduce.py --exact` additionally compares historical dense non-timing bytes
+using `reference/checksums.json`. This optional diagnostic can differ across
+platforms without changing scientific findings; investigate mismatches rather
+than editing expected hashes. Timings and graphics metadata are not compared.
+Independent arithmetic
 uses rtol1e-11/atol1e-8 in quantity units. Coverage classification allows 2e-7 M
 for queries and 1e-10 for map-score comparisons, without recalibrating thresholds.
-Conic/LP feasibility uses 2e-7 normalised mass. Different platforms may change
-last-bit numerical representations: report the mismatch and compare numerical
-values explicitly rather than editing expected hashes to accept drift.
+Conic/LP feasibility uses 2e-7 normalised mass. These internal checks are retained alongside the summary comparison; they do
+not establish validity for a new population.

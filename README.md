@@ -18,8 +18,8 @@ PYTHONPATH=study .venv/bin/python -m unittest discover -s tests -v
 ```
 
 See [data/README.md](data/README.md) for exact input versions, checksums,
-attribution and restoration from an existing retained copy. Raw inputs, extracted
-records and exhaustive generated outcomes are excluded from Git. A checksum or
+attribution and restoration from an existing retained copy. Provider originals and prepared records are obtained from their providers,
+not distributed in Git or release assets. Exhaustive generated outcomes stay local. A checksum or
 download URL alone is not a backup of the exact inputs.
 
 The reproduction refuses an existing `run/`; use a new source copy to repeat it.
@@ -27,8 +27,11 @@ It reconstructs the 1,668 registered masks, executes the fixed primary and
 southern comparisons, checks endpoints against LPs and conic residuals, computes
 1,000 fixed-score repartitions, and reproduces the changed-radius workload,
 matched-map decomposition and before-sort precision diagnostics. It checks
-non-timing output hashes against `reference/checksums.json`, derived input
-hashes and independently recomputed metrics. Timings vary with the host and are
+seven substantive summary CSVs with relative 1e-7 / absolute 1e-9 float
+tolerances, exact counts and labels, derived input hashes and independently
+recomputed metrics. These tolerances address platform arithmetic; the fixed
+splits and random seeds are unchanged. Historical dense-output byte checks are
+available separately with `reproduce.py --exact`, as an optional diagnostic. Timings vary with the host and are
 not deployment-performance guarantees. Allow several minutes after setup.
 
 `run/figures/` contains the constructed two-source example, primary width/loss
