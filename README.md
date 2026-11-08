@@ -18,9 +18,10 @@ PYTHONPATH=study .venv/bin/python -m unittest discover -s tests -v
 ```
 
 See [data/README.md](data/README.md) for exact input versions, checksums,
-attribution and restoration from an existing retained copy. Provider originals and prepared records are obtained from their providers,
-not distributed in Git or release assets. Exhaustive generated outcomes stay local. A checksum or
-download URL alone is not a backup of the exact inputs.
+attribution and restoration from an existing retained copy. Obtain original
+inputs from their providers and generate prepared records locally. Neither is
+distributed in Git or release assets. Exhaustive generated outcomes stay local.
+A checksum or download URL alone is not a backup of the exact inputs.
 
 The reproduction refuses an existing `run/`; use a new source copy to repeat it.
 It reconstructs the 1,668 registered masks, executes the fixed primary and
